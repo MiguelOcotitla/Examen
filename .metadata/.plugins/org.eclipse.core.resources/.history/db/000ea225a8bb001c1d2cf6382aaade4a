@@ -1,0 +1,40 @@
+package com.example.examen.services;
+
+
+import java.util.ArrayList;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.examen.models.peliculamodel;
+import com.example.examen.repositories.pelicularepositorio;
+@Service
+public class peliculaservices {
+	
+	@Autowired 
+	private pelicularepositorio Pelicularepositorio;
+	
+	public ArrayList<peliculamodel> obtenerPeliculas () {
+		return(ArrayList<peliculamodel>)Pelicularepositorio.findAll();
+	}
+	public peliculamodel guardarpelicula(peliculamodel pelicula) {
+		return Pelicularepositorio.save(pelicula);
+	}
+	public Optional<peliculamodel> obtenerid(long id){
+		return Pelicularepositorio.findById(id);
+		
+	}
+	public ArrayList<peliculamodel>obteneridPelicuala(Integer id){
+		return Pelicularepositorio.findByPrioridad(id);
+	}
+	public boolean eliminarpelicula(long id) {
+		try {
+			Pelicularepositorio.deleteById(null);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+}

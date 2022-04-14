@@ -1,0 +1,60 @@
+package com.example.examen.models;
+import javax.persistence.*;
+@Entity
+@Table(name = "m_pelicula")
+public class peliculamodel {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+    private String nombre;
+    private String imagen;
+    private double duracion;
+    private String clasificacion;
+    private double proyec1;
+    private double proyec2;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+	public double getDuracion() {
+		return duracion;
+	}
+	public void setDuracion(double duracion) {
+		this.duracion = duracion;
+	}
+	public String getClasificacion() {
+		return clasificacion;
+	}
+	public void setClasificacion(String clasificacion) {
+		this.clasificacion = clasificacion;
+	}
+	public double getProyec1() {
+		return proyec1;
+	}
+	public void setProyec1(double proyec1) {
+		this.proyec1 = proyec1;
+	}
+	public double getProyec2() {
+		return proyec2;
+	}
+	public void setProyec2(double proyec2) {
+		this.proyec2 = proyec2;
+	}
+
+    
+    
+}

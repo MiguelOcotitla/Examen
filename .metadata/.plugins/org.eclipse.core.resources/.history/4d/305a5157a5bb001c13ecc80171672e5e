@@ -1,0 +1,25 @@
+package com.example.examen.services;
+
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.examen.models.peliculamodel;
+import com.example.examen.repositories.pelicularepositorio;
+@Service
+public class peliculaservices {
+	
+	@Autowired 
+	private pelicularepositorio pelicularepositorio;
+	
+	public ArrayList<peliculamodel> obtenerPeliculas () {
+		return(ArrayList<peliculamodel>)pelicularepositorio.findAll();
+	}
+	public peliculamodel guardarpelicula(peliculamodel pelicula) {
+		return pelicularepositorio.save(pelicula);
+	}
+
+	
+}

@@ -1,0 +1,19 @@
+package com.example.examen.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.examen.models.peliculamodel;
+import com.example.examen.repositories.pelicularepositorio;
+@Service
+public class peliculaservices {
+	
+	@Autowired 
+	private pelicularepositorio pelicularepositorio;
+	
+	public peliculamodel create (peliculamodel peliicula) {
+	return	pelicularepositorio.save(peliicula);
+		
+	}
+	
+}

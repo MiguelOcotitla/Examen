@@ -1,0 +1,52 @@
+package com.example.examen.controllers;
+
+import java.util.ArrayList;
+import java.util.Optional;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.examen.models.peliculamodel;
+import com.example.examen.repositories.pelicularepositorio;
+import com.example.examen.services.peliculaservices;
+
+@RestController
+@RequestMapping("/pelicula")
+public class peliculaController {
+	@Autowired
+	peliculaservices Peliculaservices;
+	
+	@GetMapping()
+	public ArrayList<peliculamodel> obtenerPeliculas(){
+		return 	Peliculaservices.obtenerPeliculas();
+	}
+	@PostMapping
+	public peliculamodel guardarpelicula(@RequestBody peliculamodel peli) {
+		return this.Peliculaservices.guardarpelicula(peli);
+	}
+	@GetMapping(path = "/{id}")
+	public Optional<peliculamodel>obteneridpeli(@PathVariable("id")long id){
+		return this.Peliculaservices.obtenerid(id);
+	}
+	@DeleteMapping(path = "/{id}")
+	public String eliminar(@PathVariable("id")long id) {
+		boolean e = this.Peliculaservices.eliminarpelicula(id);
+		if(e) {
+			return "pelicula"+id+"eliminada";
+		}else 
+		{
+			return "pelicula"+id+"no existe";
+		}
+		}
+	
+	
+}

@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.metadata\\.mylyn",
+    "\\.metadata\\.plugins",
+    "\\.mvn",
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\java",
+    "\\src\\main\\java\\com",
+    "\\src\\main\\java\\com\\example",
+    "\\src\\main\\java\\com\\example\\Examen"
+  ],
+  "SelectedNode": "\\src\\main\\java\\com\\example\\Examen\\ExamenApplication.java",
+  "PreviewInSolutionExplorer": false
+}
